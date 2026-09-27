@@ -195,12 +195,12 @@ class InqMeasurement():
   @staticmethod
   @partial(jit, static_argnums=(1,))
   def compute_training_jit(batch, fm_x, rho):
-      inputs = fm_x(batch)
-      rho_res = jax.vmap(InqMeasurement.train_pure)(inputs)
-      rho_res = InqMeasurement.sum(rho_res)
-      # Sum, do not replace: predict divides by num_samples, so rho is the
-      # uniform average over every fitted instance.
-      return jnp.add(rho_res, rho) if rho is not None else rho_res
+    inputs = fm_x(batch)
+    rho_res = jax.vmap(InqMeasurement.train_pure)(inputs)
+    rho_res = InqMeasurement.sum(rho_res)
+    # Sum, do not replace: predict divides by num_samples, so rho is the
+    # uniform average over every fitted instance.
+    return jnp.add(rho_res, rho) if rho is not None else rho_res
 
   def initial_train(self, values):
     num_batches = InqMeasurement.obtain_params_batches(values, self.batch_size)
