@@ -28,7 +28,7 @@ class Inqmad(BaseModel):
     Args:
         input_shape (int): number of features
         dim_x (int): random Fourier features dimension 
-        gamma (int): kernel parameter for the random Fourier features 
+        gamma (float): kernel parameter for the random Fourier features
         random_state (int): initial random state for the random Fourier features
         batch_size (int): training samples processed by iteration
 
@@ -117,9 +117,9 @@ class QFeatureMap_rff():
   """The random Fourier features for Inqmad :cite:`gallego2022inqmad`.
 
     Args:
-        input_shape (int): number of features
+        input_dim (int): number of features
         dim (int): random Fourier features dimension 
-        gamma (int): kernel parameter for the random Fourier features 
+        gamma (float): kernel parameter for the random Fourier features
         random_state (int): initial random state for the random Fourier features
     """
 
@@ -182,7 +182,7 @@ class InqMeasurement():
     Args:
         input_shape (int): number of features
         dim_x (int): random Fourier features dimension 
-        gamma (int): kernel parameter for the random Fourier features 
+        gamma (float): kernel parameter for the random Fourier features
         random_state (int): initial random state for the random Fourier features
         batch_size (int): training samples processed by iteration
     """
