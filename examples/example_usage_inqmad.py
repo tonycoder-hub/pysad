@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     iterator = ArrayStreamer(shuffle=False)  # Init streamer to simulate streaming data.
 
-    model = Inqmad(input_shape=X_all.shape[1], dim_x=128, gamma=100)  # Init Inqmad anomaly detection model.
+    model = Inqmad(input_shape=X_all.shape[1], dim_x=128, gamma=10)  # Init Inqmad anomaly detection model.
     preprocessor = InstanceUnitNormScaler()  # Init normalizer.
     postprocessor = RunningAveragePostprocessor(window_size=5)  # Init running average postprocessor.
     auroc = AUROCMetric()  # Init area under receiver-operating- characteristics curve metric.
